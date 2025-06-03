@@ -49,12 +49,7 @@ Aby przygotować się do udziału w warsztacie, proszę postępować zgodnie z p
 
 ---
 
-## 5. Node.js (dla backendu testowego)
+## 5. Środowisko lokalne
+- Na potrzeby szkolenia używać będziemy środowiska Node.js. [Instrukcja instalacji środowiska](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
 
-- Pobierz i zainstaluj najnowszą wersję **Node.js** (zalecana: LTS):
-  - [https://nodejs.org/](https://nodejs.org/)
-- Sprawdź instalację:
-  ```bash
-  node -v
-  npm -v
-
+Po przygotowaniu środowiska prosimy o sprawdzenie dostępu do kont AWS i GitHub oraz upewnienie się, że wszystkie narzędzia są poprawnie zainstalowane.
