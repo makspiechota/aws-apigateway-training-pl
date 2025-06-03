@@ -1,4 +1,4 @@
-# Instrukcja przygotowania środowiska na warsztat: Hosting REST API na AWS API Gateway
+# Instrukcja przygotowania środowiska na warsztat: Hosting REST API on AWS Serverless
 
 Aby przygotować się do udziału w warsztacie, proszę postępować zgodnie z poniższymi krokami:
 
