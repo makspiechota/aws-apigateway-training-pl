@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Express.js Proxy Lambda with Clean Architecture Routing
+Resources:
+  ExpressProxyLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ExpressProxyLambda
+      Runtime: nodejs20.x
+      Handler: lambda.handler
+      CodeUri: s3://serverless-api-native-deploy-bucket/b19d5ff84d0987290e982103c5dcdb32
+      MemorySize: 512
+      Timeout: 10
+      Policies:
+      - AWSLambdaBasicExecutionRole
+      Events:
+        ApiProxy:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+            RestApiId:
+              Ref: ApiGateway
+  ApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: ExpressCleanProxyAPI
+      StageName: prod
+Outputs:
+  ApiUrl:
+    Description: Base URL for the Express proxy API
+    Value:
+      Fn::Sub: https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/
